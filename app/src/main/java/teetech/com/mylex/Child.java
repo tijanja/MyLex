@@ -29,7 +29,7 @@ public Child(Context c, List<Object> item)
 public static class StatuteHolder extends RecyclerView.ViewHolder
 {
     ImageView imageView;
-    TextView statute_title;
+    TextView statute_title,nsca;
     LinearLayout status_parent_box;
 
     public StatuteHolder(View itemView)
@@ -38,6 +38,7 @@ public static class StatuteHolder extends RecyclerView.ViewHolder
 
         statute_title = (TextView) itemView.findViewById(R.id.statute_title);
         status_parent_box = (LinearLayout) itemView.findViewById(R.id.status_parent_box);
+        nsca = (TextView) itemView.findViewById(R.id.nsca);
     }
 
 }
@@ -66,6 +67,7 @@ public static class StatuteHolder extends RecyclerView.ViewHolder
 
        // imgHolder.imageView.setImageDrawable(myImage.getImage());
         imgHolder.statute_title.setText(Html.fromHtml(myImage.getTitle()));
+
     }
 
     @Override

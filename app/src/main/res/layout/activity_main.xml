@@ -5,95 +5,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d3d3d4"
     tools:context="teetech.com.mylex.MainActivity">
-
-
-
-
-
-
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        >
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
-
-
-
-    </android.support.v4.widget.NestedScrollView>
-
-
-    <!--<android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
-        android:fitsSystemWindows="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-
-
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:background="@android:color/transparent"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
         app:elevation="0dp"
         >
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:layout_marginBottom="2dp"
-            android:elevation="4dp"
-            app:cardCornerRadius="5dp"
-            >
-
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:id="@+id/tool_bar"
-            android:background="#ffffff"
-           >
-
-            <android.support.v7.widget.SearchView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:queryHint="Search..."
-                app:defaultQueryHint="Search">
-
-            </android.support.v7.widget.SearchView>
+            android:id="@+id/tool_bar">
 
         </android.support.v7.widget.Toolbar>
-        </android.support.v7.widget.CardView>
+
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--app:layout_scrollFlags="scroll|enterAlways"-->
+        <!--android:layout_marginBottom="2dp"-->
+        <!--android:elevation="4dp"-->
+        <!--app:cardCornerRadius="5dp"-->
+        <!--&gt;-->
+
+        <!--<android.support.v7.widget.Toolbar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:id="@+id/tool_bar"-->
+        <!--android:background="#ffffff"-->
+        <!--&gt;-->
+
+        <!--<android.support.v7.widget.SearchView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:queryHint="Search..."-->
+        <!--app:defaultQueryHint="Search">-->
+
+        <!--</android.support.v7.widget.SearchView>-->
+
+        <!--</android.support.v7.widget.Toolbar>-->
+        <!--</android.support.v7.widget.CardView>-->
 
     </android.support.design.widget.AppBarLayout>
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="5">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sunset"
+                        android:scaleType="centerCrop"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                </LinearLayout>
+
+            </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="80dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                app:cardElevation="0dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#f0f0f0"
+                        android:layout_margin="8dp"
+                        android:id="@+id/statuteSearch"
+                        android:queryHint="Search Statute"
+                        app:queryHint="Search Statute">
+
+                    </android.support.v7.widget.SearchView>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical"
+                        />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
 
 
 
 
 
 
-    <!--</android.support.v7.widget.CardView>-->
 
-
-
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

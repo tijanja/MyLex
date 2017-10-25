@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Object> statuteList,advertList;
     private List<Object> objectList;
+    private SearchView statuteSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         statuteList = new ArrayList<>();
-
+        statuteSearch = (SearchView) findViewById(R.id.statuteSearch);
+        statuteSearch.setIconifiedByDefault(false);
         advertList = new ArrayList<>();
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         StatuteListAdapter statuteListAdapter = new StatuteListAdapter(statuteList,this,advertList,this);
         recyclerView.setAdapter(statuteListAdapter);
 
-        statuteList.add(new Category(this,"image"));
+        //statuteList.add(new Category(this,"image"));
         statuteList.add(new Category(this,"Constitution"));
         statuteList.add(new Category(this,"State"));
         statuteList.add(new Category(this,"Procurement"));

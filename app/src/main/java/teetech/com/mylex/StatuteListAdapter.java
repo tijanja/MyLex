@@ -149,8 +149,8 @@ public class StatuteListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         switch (viewType)
         {
             case 0:
-                View imageView = inflater.inflate(R.layout.image_layout,parent,false);
-                viewHolder = new ImageListBoxHolder(imageView);
+//                View imageView = inflater.inflate(R.layout.image_layout,parent,false);
+//                viewHolder = new ImageListBoxHolder(imageView);
                 break;
 
             case 1:
@@ -380,11 +380,11 @@ public class StatuteListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     {
         Category category = (Category)statuteList.get(position);
 
-        if(category.getCategoryName().equals("image"))
-        {
-            return 0;
-        }
-        else if(category.getCategoryName().equals("Child"))
+//        if(category.getCategoryName().equals("image"))
+//        {
+//            return 0;
+//        }
+        if(category.getCategoryName().equals("Child"))
         {
             return 1;
         }

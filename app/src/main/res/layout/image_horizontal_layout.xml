@@ -5,46 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/status_parent_box"
+    android:layout_marginBottom="10dp"
     >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#d3d3d4"/>
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#d3d3d4"/>-->
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        >
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="?android:attr/selectableItemBackground"-->
+        <!--android:clickable="true"-->
+        <!--&gt;-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="2dp"
+            android:padding="0dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="COMPANIES AND ALLIED MATTERS ACT"
+                    android:fontFamily="sans-serif-thin"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:id="@+id/statute_title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NSCA: 1990 No.13"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"
-                    android:id="@+id/statute_title"
-                    android:layout_gravity="left"/>
+                    android:textSize="9sp"
+                    android:textColor="#0d5b8f"
+                    android:id="@+id/nsca"/>
 
 
 
             </LinearLayout>
+
+
         </LinearLayout>
 
 
-    </android.support.v7.widget.CardView>
-
+    <!--</android.support.v7.widget.CardView>-->
 
 </LinearLayout>

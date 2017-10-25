@@ -1,6 +1,8 @@
 package teetech.com.mylex;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -69,6 +71,7 @@ public class Category implements OnDataReady
     @Override
     public void dataReady(JSONObject object)
     {
+        Log.i("=========",object.toString());
             try
             {
                 JSONArray jsonArray = object.getJSONArray("data");
@@ -76,19 +79,23 @@ public class Category implements OnDataReady
                 {
                     for(int i=0;i<jsonArray.length();i++)
                     {
-
                         JSONObject jsObj = jsonArray.getJSONObject(i);
-
-                        Statute statute = new Statute(jsObj.getString("id"));
-                        statute.setTitle(jsObj.getString("title"));
-                        statute.setNextSet(jsObj.getString("nextSet"));
-                        statute.setGloAnno(jsObj.getString("glo-anno"));
-                        nextStep = jsObj.getString("title");
-                        item.add(statute);
-
-                        if(statuteListAdapter!=null)
+                        if(!TextUtils.isEmpty(jsObj.getString("title").trim()))
                         {
-                            statuteListAdapter.notifyDataSetChanged();
+                            Statute statute = new Statute(jsObj.getString("id"));
+                            statute.setTitle(jsObj.getString("title"));
+                            statute.setNextSet(jsObj.getString("nextSet"));
+                            statute.setGloAnno(jsObj.getString("glo-anno"));
+                            statute.setYear(jsObj.getString("year"));
+                            statute.setNumber(jsObj.getString("number"));
+                            statute.setCommencementDate(jsObj.getString("commence"));
+                            nextStep = jsObj.getString("title");
+                            item.add(statute);
+
+                            if(statuteListAdapter!=null)
+                            {
+                                statuteListAdapter.notifyDataSetChanged();
+                            }
                         }
                     }
 

@@ -85,7 +85,7 @@ public class StatuteRowAdapter  extends RecyclerView.Adapter implements OnDataRe
     public static class StatuteHolder extends RecyclerView.ViewHolder
     {
         ImageView imageView;
-        TextView statute_title;
+        TextView statute_title,nsca;
         LinearLayout status_parent_box;
 
         public StatuteHolder(View itemView)
@@ -93,6 +93,7 @@ public class StatuteRowAdapter  extends RecyclerView.Adapter implements OnDataRe
             super(itemView);
             statute_title = (TextView) itemView.findViewById(R.id.statute_title);
             status_parent_box = (LinearLayout) itemView.findViewById(R.id.status_parent_box);
+            nsca = (TextView) itemView.findViewById(R.id.nsca);
         }
 
     }
@@ -120,6 +121,7 @@ public class StatuteRowAdapter  extends RecyclerView.Adapter implements OnDataRe
 
         //imgHolder.imageView.setImageDrawable(myImage.getImage());
         imgHolder.statute_title.setText(Html.fromHtml(myImage.getTitle()));
+        imgHolder.nsca.setText("NSCA "+myImage.getYear()+" No. "+myImage.getNumber());
     }
 
     @Override

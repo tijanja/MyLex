@@ -227,6 +227,7 @@ public class StatuteListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     {try
                         {
                             Statute statute = (Statute)itemList.get(position);
+                            Log.e("Click-events1","statuted clicked");
                             if(statute.getNextSet().equals("part"))
                             {
                                 Intent intent = new Intent(context,StatuteDisplayActivity.class);
@@ -239,6 +240,7 @@ public class StatuteListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                             }
                             else
                             {
+
                                 Intent intent = new Intent(context,SectionListActivity.class);
                                 intent.putExtra("title",statute.getTitle());
                                 intent.putExtra("statuteId",statute.getStatuteId());
@@ -380,10 +382,10 @@ public class StatuteListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     {
         Category category = (Category)statuteList.get(position);
 
-//        if(category.getCategoryName().equals("image"))
-//        {
-//            return 0;
-//        }
+        if(category.getCategoryName().equals("image"))
+        {
+            return 0;
+        }
         if(category.getCategoryName().equals("Child"))
         {
             return 1;

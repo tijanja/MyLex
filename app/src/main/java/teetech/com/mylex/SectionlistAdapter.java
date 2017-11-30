@@ -29,7 +29,6 @@ public class SectionlistAdapter extends RecyclerView.Adapter{
             {
                 super(itemView);
                 section_title = (TextView) itemView.findViewById(R.id.part_title);
-
             }
 
         }
